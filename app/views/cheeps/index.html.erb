@@ -1,0 +1,17 @@
+<%= link_to 'cheepする', new_cheep_path %>
+<p id="notice"><%= notice %></p>
+
+<% @cheeps.each do |cheep| %>
+  <div class="content_area">
+    <div class="content_text">
+      <p><%= cheep.content %></p>
+    </div>
+    <div class="datetime">
+      <p><%= cheep.created_at.time.strftime("%Y年%m月%d日 %H時%M分") %></p>
+    </div>
+    <div class="edit_button">
+      <a><%= link_to '編集', edit_cheep_path(cheep) %></a>
+      <a><%= link_to '削除', cheep, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></a>
+    </div>
+  </div>
+<% end %>

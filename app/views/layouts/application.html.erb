@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cheeper</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <a>Home</a>
+      <a>Features</a>
+      <a>Samples</a>
+      <a>Start</a>
+    </header>
+    <%= yield %>
+    <footer>
+      <a>Home</a>
+      <a>Features</a>
+      <a>Samples</a>
+    </footer>
+  </body>
+</html>
