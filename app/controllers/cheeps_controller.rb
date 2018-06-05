@@ -2,6 +2,9 @@ class CheepsController < ApplicationController
   before_action :set_cheep, only: [:edit, :update, :destroy]
   before_action :set_cheep_params, only: [:confirm, :create]
 
+  def home
+  end
+
   def index
     @cheeps = Cheep.all.reverse_order
   end

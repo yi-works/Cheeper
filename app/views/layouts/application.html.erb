@@ -10,16 +10,42 @@
 
   <body>
     <header>
-      <a>Home</a>
-      <a>Features</a>
-      <a>Samples</a>
-      <a>Start</a>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <%= link_to root_path, class: 'navbar-brand' do %>
+              <%= image_tag('Cheeper_logo.png', class: 'logo make-this-white', alt: 'Bland') %>
+            <% end %>
+
+            <button type="button" class="navbar-toggle cllapsed" data-toggle="collapse" data-target="#global-navi">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div id="global-navi" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Home", root_path %></li>
+              <li><a href="">Features</a></li>
+              <li><a href="">Samples</a></li>
+            </ul>
+            <form method="get" action="cheeps#index">
+              <button class="btn navbar-btn navbar-right">Login</button>
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
+
     <%= yield %>
-    <footer>
-      <a>Home</a>
-      <a>Features</a>
-      <a>Samples</a>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy;Y.ito</p>
+      </div>
     </footer>
+    </div>
   </body>
 </html>

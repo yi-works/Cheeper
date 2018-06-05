@@ -1,16 +1,18 @@
-<h2>以下の内容で送信します</h2>
+<div class="container">
+  <h2>以下の内容で送信します</h2>
 
-<%= form_with(model: @cheep, url: cheeps_path, local: true) do |form| %>
-  <%= form.hidden_field :content %>
+  <%= form_with(model: @cheep, url: cheeps_path, local: true) do |form| %>
+    <%= form.hidden_field :content %>
 
-  <div class ="confirm_text">
-    <p>内容</p>
-    <p><%= @cheep.content %></p>
-    <%= form.submit "送信する" %>
-  </div>
-<% end %>
+    <div class ="confirm_text">
+      <p>内容</p>
+      <p><%= @cheep.content %></p>
+      <%= form.submit "送信する" %>
+    </div>
+  <% end %>
 
-<%= form_with(model: @cheep, url: new_cheep_path, local:true, method: 'get') do |form| %>
-  <%= form.hidden_field :content %>
-  <%= form.submit "戻る", name: 'back' %>
-<% end %>
+  <%= form_with(model: @cheep, url: new_cheep_path, local:true, method: 'get') do |form| %>
+    <%= form.hidden_field :content %>
+    <%= form.submit "戻る", name: 'back' %>
+  <% end %>
+</div>
