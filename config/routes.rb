@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   root to: 'cheeps#home'
   resources :cheeps do
     collection do
