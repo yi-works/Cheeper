@@ -14,7 +14,8 @@ class CheepsController < ApplicationController
     if params[:back]
       set_cheep_params
     else
-      @cheep = Cheep.new
+      set_user
+      @cheep = @user.cheeps.build
     end
   end
 
@@ -53,11 +54,12 @@ class CheepsController < ApplicationController
   end
 
   def cheep_params
-    params.require(:cheep).permit(:content)
+    params.require(:cheep).permit(:content, :user_id)
   end
 
   def set_cheep_params
-    @cheep = Cheep.new(cheep_params)
+    set_user
+    @cheep = @user.cheeps.build(cheep_params)
   end
 
   def user_logged_in?
@@ -65,5 +67,9 @@ class CheepsController < ApplicationController
     else
       redirect_to new_session_path
     end
+  end
+
+  def set_user
+    @user = User.find(current_user.id) if logged_in?
   end
 end
