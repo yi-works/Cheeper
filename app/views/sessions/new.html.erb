@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row form-group">
     <div class="col-xs-6 col-xs-offset-3">
       <h1>Log in</h1>
       <%= form_with(scope: :session, url: sessions_path, local: true) do |form| %>
@@ -15,6 +15,11 @@
 
         <%= form.submit "Log in" %>
       <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <%= link_to "新規登録", new_user_path %>
     </div>
   </div>
 </div>
