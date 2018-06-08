@@ -14,8 +14,8 @@ class CheepsController < ApplicationController
     if params[:back]
       set_cheep_params
     else
-      set_user
-      @cheep = @user.cheeps.build
+      current_user
+      @cheep = @current_user.cheeps.build
     end
   end
 
@@ -58,8 +58,8 @@ class CheepsController < ApplicationController
   end
 
   def set_cheep_params
-    set_user
-    @cheep = @user.cheeps.build(cheep_params)
+    current_user
+    @cheep = @current_user.cheeps.build(cheep_params)
   end
 
   def user_logged_in?
@@ -69,7 +69,4 @@ class CheepsController < ApplicationController
     end
   end
 
-  def set_user
-    @user = User.find(current_user.id) if logged_in?
-  end
 end
