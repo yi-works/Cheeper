@@ -1,6 +1,7 @@
 class CheepsController < ApplicationController
   before_action :set_cheep, only: [:edit, :update, :destroy]
   before_action :set_cheep_params, only: [:confirm, :create]
+  before_action :user_logged_in?, only: [:new, :edit, :show, :destroy]
 
   def home
   end
@@ -57,5 +58,12 @@ class CheepsController < ApplicationController
 
   def set_cheep_params
     @cheep = Cheep.new(cheep_params)
+  end
+
+  def user_logged_in?
+    if logged_in?
+    else
+      redirect_to new_session_path
+    end
   end
 end

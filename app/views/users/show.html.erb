@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row form-group">
+    <h1><%= @user.name %>のページ</h1>
+    <p>メールアドレス: <%=@user.email %></p>
+  </div>
+  <div class="row">
+    <% if logged_in? %>
+    <% else %>
+      <%= link_to "ログイン", new_session_path %>
+    <% end %>
+  </div>
+</div>
