@@ -23,6 +23,9 @@ class CheepsController < ApplicationController
   end
 
   def edit
+    unless @cheep.user_id == current_user.id
+      redirect_to cheeps_path
+    end
   end
 
   def show
@@ -38,7 +41,7 @@ class CheepsController < ApplicationController
   end
 
   def update
-    if @cheep.update(cheep_params)
+    if @cheep.update(cheep_params) && @cheep.user_id == current_user.id
       redirect_to cheeps_path, notice: '編集しました！'
     else
       render :edit
