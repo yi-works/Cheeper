@@ -8,4 +8,8 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.find_by(id: params[:id]).destroy
     redirect_to cheeps_url, notice: "#{favorite.cheep.user.name}さんのCheepをお気に入り解除しました"
   end
+
+  def index
+    @cheeps = current_user.favorite_cheeps.reverse_order
+  end
 end

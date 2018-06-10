@@ -40,6 +40,11 @@
                 <% if logged_in? %>
                   <span>User: <%= current_user.name %></span>
                   <%=
+                    link_to "Favorites",
+                    favorites_path(current_user.id),
+                    class: 'btn btn-default navbar-btn'
+                  %>
+                  <%=
                     link_to "Profile",
                     user_path(current_user.id),
                     class: 'btn btn-default navbar-btn'
