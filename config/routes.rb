@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+
+  get 'favorites/destroy'
+
   root to: 'cheeps#home'
   resources :cheeps do
     collection do
@@ -8,4 +12,5 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
+  resources :favorites, only: [:create, :destroy]
 end

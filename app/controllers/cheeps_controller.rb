@@ -1,5 +1,5 @@
 class CheepsController < ApplicationController
-  before_action :set_cheep, only: [:edit, :update, :destroy]
+  before_action :set_cheep, only: [:edit, :update, :destroy, :show]
   before_action :set_cheep_params, only: [:confirm, :create]
   before_action :user_logged_in?, only: [:new, :edit, :show, :destroy]
 
@@ -23,6 +23,10 @@ class CheepsController < ApplicationController
   end
 
   def edit
+  end
+
+  def show
+    @favorite = current_user.favorites.find_by(cheep_id: @cheep.id)
   end
 
   def create

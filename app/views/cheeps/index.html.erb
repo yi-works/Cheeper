@@ -14,8 +14,9 @@
               <p><%= cheep.created_at.time.strftime("%Y年%m月%d日 %H時%M分") %></p>
             </div>
             <div class="edit_button">
-              <a><%= link_to '編集', edit_cheep_path(cheep) %></a>
-              <a><%= link_to '削除', cheep, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></a>
+              <%= link_to '詳細', cheep %>
+              <%= link_to '編集', edit_cheep_path(cheep) %>
+              <%= link_to '削除', cheep, method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
             </div>
           </div>
         </div>
