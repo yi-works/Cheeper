@@ -46,8 +46,10 @@ class CheepsController < ApplicationController
   end
 
   def destroy
-    @cheep.destroy
-    redirect_to cheeps_path, notice: '削除しました。'
+    if @cheep.user_id == current_user.id
+      @cheep.destroy
+      redirect_to cheeps_path, notice: '削除しました。'
+    end
   end
 
   private

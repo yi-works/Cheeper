@@ -15,8 +15,10 @@
             </div>
             <div class="edit_button">
               <%= link_to '詳細', cheep %>
-              <%= link_to '編集', edit_cheep_path(cheep) %>
-              <%= link_to '削除', cheep, method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+              <% if cheep.user_id == current_user.id %>
+                <%= link_to '編集', edit_cheep_path(cheep) %>
+                <%= link_to '削除', cheep, method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+              <% end %>
             </div>
           </div>
         </div>

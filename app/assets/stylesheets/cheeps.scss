@@ -2,6 +2,10 @@ body {
   padding-top: 50px;
 }
 
+header {
+  margin-bottom: 30px;
+}
+
 .jumbotron {
   background: image-url("Cheeper_main@2x.png") center no-repeat;
   background-size: cover;
@@ -17,6 +21,10 @@ body {
 
 .width-100 {
   width: auto;
+}
+
+.box {
+  margin-bottom: 10px;
 }
 
 .navbar-inverse {

@@ -59,7 +59,7 @@
       </nav>
     </header>
 
-    <div class="container">
+    <div class="container flash_area">
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
