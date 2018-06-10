@@ -1,7 +1,15 @@
 <div class="container">
-  <h2>編集する</h2>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 box">
+      <h2>編集する</h2>
+    </div>
+  </div>
 
   <%= render 'form' %>
-  <br>
-  <%= link_to '戻る', cheeps_path %>
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 box">
+      <%= link_to '戻る', cheeps_path, class: 'btn btn-default' %>
+    </div>
+  </div>
 </div>

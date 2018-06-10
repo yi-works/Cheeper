@@ -1,21 +1,32 @@
 <%= form_with(model: @cheep, local: true, url: choose_new_or_edit) do |form| %>
-  <% if @cheep.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @cheep.errors.count %>件のエラー</h2>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 box">
+      <% if @cheep.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @cheep.errors.count %>件のエラー</h2>
 
-      <ul>
-        <% @cheep.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+          <ul>
+            <% @cheep.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.text_area :content, id: :cheep_content %>
   </div>
 
-  <div class="actions">
-    <%= form.submit '送信'%>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 box">
+      <div class="field">
+        <%= form.text_area :content, id: :cheep_content %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 box">
+      <div class="actions">
+        <%= form.submit '送信', class: 'btn btn-default' %>
+      </div>
+    </div>
   </div>
 <% end %>
