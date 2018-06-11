@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'favorites/create'
-
-  get 'favorites/destroy'
-
   root to: 'cheeps#home'
+
   resources :cheeps do
     collection do
       post :confirm
