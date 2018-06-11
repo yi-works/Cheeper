@@ -23,7 +23,7 @@ class CheepsController < ApplicationController
   end
 
   def edit
-    unless @cheep.user_id == current_user.id
+    if @cheep.user_id != current_user.id
       redirect_to cheeps_path
     end
   end
@@ -62,17 +62,15 @@ class CheepsController < ApplicationController
   end
 
   def cheep_params
-    params.require(:cheep).permit(:content, :user_id)
+    params.require(:cheep).permit(:content)
   end
 
   def set_cheep_params
-    @cheep = Cheep.new(cheep_params)
-    @cheep.user_id = current_user.id
+    @cheep = current_user.cheeps.build(cheep_params)
   end
 
   def user_logged_in?
-    if logged_in?
-    else
+    unless logged_in?
       redirect_to new_session_path
     end
   end
