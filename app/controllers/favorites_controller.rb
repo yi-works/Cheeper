@@ -1,7 +1,6 @@
 class FavoritesController < ApplicationController
   def create
     favorite = current_user.favorites.create(cheep_id: params[:cheep_id])
-    binding.pry
     redirect_to cheeps_url, notice: "#{favorite.cheep.user.name}さんのCheepをお気に入り登録しました"
   end
 
