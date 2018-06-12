@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_with(model: contact, local: true) do |form| %>
+  <%= form_with(model: contact, class: 'form-contact', local: true) do |form| %>
     <div class="row">
       <% if @contact.errors.any? %>
         <div id="error_explanation">
@@ -15,21 +15,47 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-6 col-xs-offset-3 box">
-        <div class="field">
-          <%= form.text_area :content %>
+      <div class="col-xs-8 col-xs-offset-2 box">
+        <div class="field contact-field-name">
+          <%= form.label '名前' %>
+          <%= form.text_field :name, tabindex: '1', autofocus: 'autofocus' %>
         </div>
       </div>
     </div>
+
     <div class="row">
-      <div class="col-xs-6 col-xs-offset-3 box">
-        <%= form.submit '送信', class: 'btn btn-default' %>
+      <div class="col-xs-8 col-xs-offset-2 box">
+        <div class="field contact-field-email">
+          <%= form.label 'メールアドレス' %>
+          <%= form.text_field :email, tabindex: '2' %>
+        </div>
       </div>
     </div>
+
     <div class="row">
-      <div class="col-xs-6 col-xs-offset-3 box">
-        <%= link_to 'Back', contacts_path, class: 'btn btn-default' %>
+      <div class="col-xs-8 col-xs-offset-2 box">
+        <div class="field contact-field-content">
+          <%= form.label 'お問い合わせ内容' %>
+          <%= form.text_area :content, tabindex: '3' %>
+        </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 box">
+        <div class="field">
+          <%= form.submit '送信', class: 'btn btn-default', tabindex: '4' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 box">
+        <div class="back-link">
+          <%= link_to '戻る', contacts_path, tabindex: '5' %>
+        </div>
+      </div>
+    </div>
+
   <% end %>
 </div>

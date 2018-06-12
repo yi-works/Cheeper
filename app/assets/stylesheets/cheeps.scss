@@ -1,7 +1,3 @@
-body {
-  padding-top: 50px;
-}
-
 header {
   margin-bottom: 30px;
 }
@@ -10,6 +6,7 @@ header {
   background: image-url("Cheeper_main@2x.png") center no-repeat;
   background-size: cover;
   height: 750px;
+  margin-top: -50px;
 }
 
 .jumbotron p {

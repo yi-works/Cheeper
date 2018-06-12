@@ -3,6 +3,9 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
+  def confirm
+  end
+
   def create
   end
 end
