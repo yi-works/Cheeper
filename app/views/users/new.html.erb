@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
-      <h1>Sign up</h1>
+      <h1>アカウント新規作成</h1>
 
       <%= form_with(model: @user, local: true) do |form| %>
 
@@ -39,7 +39,7 @@
           <%= form.password_field :password_confirmation %>
         </div>
 
-        <%= form.submit "Create my account" %>
+        <%= form.submit "アカウント作成", class: 'users-submit' %>
       <% end %>
     </div>
   </div>
