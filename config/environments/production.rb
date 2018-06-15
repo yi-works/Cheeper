@@ -64,7 +64,7 @@ Rails.application.configure do
 
   # config.action_mailer.default_url_options = { host: 'https://shielded-mountain-61778.herokuapp.com/' }
   config.action_mailer.default_url_options = { host: 'shielded-mountain-61778.herokuapp.com' }
-  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :letter_opener_web
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
