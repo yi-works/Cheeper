@@ -62,7 +62,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "cheeper_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'https://shielded-mountain-61778.herokuapp.com/contacts' }
+  config.action_mailer.default_url_options = { host: 'https://shielded-mountain-61778.herokuapp.com/' }
   config.action_mailer.delivery_method = :letter_opener
 
   # Ignore bad email addresses and do not raise email delivery errors.
