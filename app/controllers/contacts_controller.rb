@@ -15,6 +15,7 @@ class ContactsController < ApplicationController
 
   def create
     if @contact.save
+      ContactMailer.contact_mail(@contact).deliver
       redirect_to contacts_path, notice: '送信しました！'
     else
       render :new
