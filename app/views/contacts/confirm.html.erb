@@ -3,17 +3,19 @@
     <div class="col-xs-6 col-xs-offset-3 box">
       <h2>以下の内容で送信します</h2>
 
-      <%= form_with(model: @cheep, url: cheeps_path, local: true) do |form| %>
+      <%= form_with(model: @contact, url: contacts_path, local: true) do |form| %>
+        <%= form.hidden_field :name %>
+        <%= form.hidden_field :email %>
         <%= form.hidden_field :content %>
 
         <div class="confirm_text">
           <p>内容</p>
-          <p><%= @cheep.content %></p>
+          <p><%= @contact.content %></p>
           <%= form.submit "送信する", class: 'btn btn-default' %>
         </div>
       <% end %>
 
-      <%= form_with(model: @cheep, url: new_cheep_path, local:true, method: 'get') do |form| %>
+      <%= form_with(model: @contact, url: new_contact_path, local: true) do |form| %>
         <%= form.hidden_field :content %>
         <%= form.submit "戻る", name: 'back', class: 'btn btn-default' %>
       <% end %>
