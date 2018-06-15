@@ -34,6 +34,7 @@ class CheepsController < ApplicationController
 
   def create
     if @cheep.save
+      CheepMailer.cheep_mail(@cheep).deliver
       redirect_to cheeps_path, notice: 'cheepしました！'
     else
       render :new

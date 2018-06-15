@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/inbox"
-  end
+
+  mount LetterOpenerWeb::Engine, at: "/inbox"
+  
 end
