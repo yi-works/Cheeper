@@ -10,6 +10,9 @@
             <div class="content_text">
               <p><%= cheep.content %></p>
             </div>
+            <div class="content_image">
+              <%= image_tag (cheep.image.thumb.url) if cheep.image.url %>
+            </div>
             <div class="content_datetime">
               <p><%= cheep.created_at.time.strftime("%Y年%m月%d日 %H時%M分") %></p>
             </div>

@@ -24,6 +24,14 @@
   </div>
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 box">
+      <div class="field">
+        <%= image_tag (@cheep.image.url) if @cheep.image.url %>
+        <%= form.file_field :image, id: :cheep_image %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 box">
       <div class="actions">
         <%= form.submit '送信', class: 'btn btn-default' %>
       </div>
