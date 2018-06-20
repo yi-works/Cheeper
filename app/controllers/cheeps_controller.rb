@@ -20,11 +20,6 @@ class CheepsController < ApplicationController
 
   def confirm
     render :new if @cheep.invalid?
-    # if @cheep.image.url != nil
-    #   image = MiniMagick::Image.read(@cheep.image.url)
-    #   image.resize "300x300"
-    #   image.write "w300.jpg"
-    # end
   end
 
   def edit

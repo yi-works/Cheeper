@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h1>アカウント編集</h1>
+
+      <%= form_with(model: @user, url: user_path, local: true) do |form| %>
+
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@user.errors.count, "error") %>
+              prohibited this @user from being saved:
+            </h2>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= form.label :image %>
+          <%= form.file_field :image, id: :user_image %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :email %>
+          <%= form.email_field :email %>
+        </div>
+
+        <%= form.submit "アカウント情報更新", class: 'users-submit' %>
+      <% end %>
+    </div>
+  </div>
+</div>
