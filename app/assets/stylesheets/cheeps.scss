@@ -60,14 +60,33 @@ header {
   padding-left: 20px;
 }
 
-.content_area {
-  padding: 15px;
-  border-radius: 10px;
+.content_background {
   background-color: #fff67f;
+  border-radius: 10px;
+}
+.content_area {
+  margin-left: 50px;
+  padding: 15px;
 }
 
+.content_header {
+  margin-bottom: 10px;
+}
+.user_image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-left: -58px;
+  float: left;
+}
 .content_text {
   margin-bottom: 20px;
+}
+
+.content_image {
+  margin-bottom: 15px;
 }
 
 .content_datetime {

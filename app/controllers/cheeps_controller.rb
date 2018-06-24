@@ -7,7 +7,7 @@ class CheepsController < ApplicationController
   end
 
   def index
-    @cheeps = Cheep.all.reverse_order
+    @cheeps = Cheep.includes(:user).reverse_order
   end
 
   def new

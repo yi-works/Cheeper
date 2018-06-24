@@ -6,22 +6,32 @@
     <div class="row">
       <% @cheeps.each do |cheep| %>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="content_area">
-            <div class="content_text">
-              <p><%= cheep.content %></p>
-            </div>
-            <div class="content_image">
-              <%= image_tag (cheep.image.thumb.url) if cheep.image.url %>
-            </div>
-            <div class="content_datetime">
-              <p><%= cheep.created_at.time.strftime("%Y年%m月%d日 %H時%M分") %></p>
-            </div>
-            <div class="edit_button">
-              <%= link_to '詳細', cheep %>
-              <% if cheep.user_id == current_user.id %>
-                <%= link_to '編集', edit_cheep_path(cheep) %>
-                <%= link_to '削除', cheep, method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
-              <% end %>
+          <div class="content_background">
+            <div class="content_area">
+              <div class="content_header">
+                <span><%= cheep.user.name %></span>
+                <% if cheep.user.image.present? %>
+                  <%= image_tag cheep.user.image, class: 'user_image' %>
+                <% else %>
+                  <%= image_tag 'avatar.jpg', class: 'user_image' %>
+                <% end %>
+              </div>
+              <div class="content_text">
+                <p><%= cheep.content %></p>
+              </div>
+              <div class="content_image">
+                <%= image_tag (cheep.image.thumb.url) if cheep.image.url %>
+              </div>
+              <div class="content_datetime">
+                <p><%= cheep.created_at.time.strftime("%Y年%m月%d日 %H時%M分") %></p>
+              </div>
+              <div class="edit_button">
+                <%= link_to '詳細', cheep %>
+                <% if cheep.user_id == current_user.id %>
+                  <%= link_to '編集', edit_cheep_path(cheep) %>
+                  <%= link_to '削除', cheep, method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
